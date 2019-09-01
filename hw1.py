@@ -29,3 +29,22 @@ def second_biggest(array):
             two_num[1] = two_num[0]
             two_num[0] = num
     return two_num[1]
+
+
+def contains(matrix, value):
+    for row in matrix:
+        for each in row:
+            if each == value:
+                return True
+    return False
+
+def get_column(matrix, index, reverse = False):
+    result = []
+    for row in matrix:
+        result.append(row[index])
+
+    if (reverse == True):
+        return result[::-1]
+    else:
+        return result
+
