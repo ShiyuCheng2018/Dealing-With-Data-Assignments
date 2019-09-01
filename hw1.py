@@ -38,13 +38,31 @@ def contains(matrix, value):
                 return True
     return False
 
-def get_column(matrix, index, reverse = False):
+
+def get_column(matrix, index, reverse=False):
     result = []
     for row in matrix:
         result.append(row[index])
 
-    if (reverse == True):
+    if reverse:
         return result[::-1]
     else:
         return result
+
+
+def is_diagonal(matrix):
+    for row in range(len(matrix)):
+        for each in range(len(matrix[row])):
+            if (row != each) & (matrix[row][each] != 0):
+                return False
+    return True
+
+
+def is_upper_triangular(matrix):
+    for row in range(len(matrix)):
+        for each in range(len(matrix)):
+            if (row > each) & (matrix[row][each] != 0):
+                return False
+    return True
+
 
