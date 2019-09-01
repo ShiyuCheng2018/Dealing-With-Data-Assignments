@@ -66,3 +66,40 @@ def is_upper_triangular(matrix):
     return True
 
 
+def biggest(matrix):
+    my_biggest = matrix[0][0]
+    for row in matrix:
+        for each in row:
+            if my_biggest < each:
+                my_biggest = each
+    return my_biggest
+
+
+def indices_biggest(matrix):
+    my_biggest = biggest(matrix)
+    my_list = []
+    for row in range(len(matrix)):
+        for each in range(len(matrix[row])):
+            if my_biggest == matrix[row][each]:
+                my_list.append((row, each))
+    return my_list
+
+
+def indices_divisible_by_3():
+    return
+
+
+def create_matrix():
+    return
+
+
+def corners():
+    return
+
+
+def print_nzp():
+    return
+
+
+def sort_int_string():
+    return
