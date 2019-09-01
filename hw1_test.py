@@ -1,4 +1,4 @@
-# Hw1 tester, DRAFT!
+# Hw1 unit tests, version 1.0
 
 from hw1 import *
 import unittest
@@ -96,6 +96,9 @@ class TestFns(unittest.TestCase):
         self.assertEqual(5, second_biggest([5, 4, 3, 2, 1, 2, 3, 4, 5, 6]))
         self.assertEqual(6, second_biggest([7, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6]))
         self.assertEqual(12, second_biggest([12, 12, 12]))
+        self.assertEqual(12, second_biggest([12, 12, 12]))
+        self.assertEqual(-4751433543177166420, second_biggest([-9172997208545430121, -6261421986659827751, -6776445639395506310, -7611105336578200572, -7090165692420484881, -8176708890984671245, -5838559672576929164, -8497913531347285206, -5135315061876505912, -6141249917775242390, -5816574962527138022, -7841515860727383988, -6813440665901309647, -8561784316437323150, -5080440722645407900, -7831566073062440929, -6594994920204194183, -4647440541814192807, -4751433543177166420, -4794507894426376645]))
+        self.assertEqual(15714414278, second_biggest([16316105278, 5157598875, -10148355512, -14796614125, 12671699739, 14936087251, -17122891517, -14796614125, 12671699739, 14936087251, -17122891517, -8289644049, -13330661612, -5746216341, 6415201071, 6604275455, 11000183874, 5496966180, 6585805730, 15714414278, 5205878922, 8189210683, 13878332564, -15911926276]))
     
     def test_get_column(self):
         self.assertEqual([3,4,7],get_column([[3,5],[4,2],[7,1]],0))
@@ -194,32 +197,6 @@ class TestFns(unittest.TestCase):
         self.assertEqual("", sort_int_string("\t"))
         self.assertEqual("1", sort_int_string("1"))
        
-    def test_dups_lol(self):
-        self.assertFalse(dups_lol([]))
-        self.assertFalse(dups_lol([[1,2]]))
-        self.assertFalse(dups_lol([[1],[2]]))
-        self.assertFalse(dups_lol([['python', 'fun'],['study', 'meh']]))
-        self.assertFalse(dups_lol([[1,3,4],[2,7,6],[9,8,5]]))
-        self.assertFalse(dups_lol([[1,2],[3,4],[5,6]]))
-        self.assertTrue(dups_lol([[1,1]]))
-        self.assertTrue(dups_lol([[1],[1]]))
-        self.assertTrue(dups_lol([['python', 'fun'],['study', 'fun']]))
-        self.assertTrue(dups_lol([[1,3,4],[2,7,6],[9,8,1]]))
-        self.assertTrue(dups_lol([[1,2],[3,1],[5,6]]))
-        
-    def test_dups_dict(self):
-        self.assertFalse(dups_dict({}))
-        self.assertFalse(dups_dict({'dog':[1,2]}))
-        self.assertFalse(dups_dict({'dog':[1],'cats':[2]}))
-        self.assertFalse(dups_dict({'yay':['python', 'fun'],'nay':['study', 'meh']}))
-        self.assertFalse(dups_dict({'vals1':[1,3,4],'vals2':[2,7,6],'vals3':[9,8,5]}))
-        self.assertFalse(dups_dict({'vals1':[1,2],'vals2':[3,4],'vals3':[5,6]}))
-        self.assertTrue(dups_dict({'dogs':[1,1]}))
-        self.assertTrue(dups_dict({'dogs':[1],'cats':[1]}))
-        self.assertTrue(dups_dict({'yay':['python', 'fun'],'nay':['study', 'fun']}))
-        self.assertTrue(dups_dict({'vals1':[1,3,4],'vals2':[2,7,6],'vals3':[9,8,1]}))
-        self.assertTrue(dups_dict({'vals1':[1,2],'vals2':[3,1],'vals3':[5,6]}))
-
     def test_create_matrix(self):
         self.assertEqual([[1, 2, 3], [40, 3, 1], [3, 1, 3]], create_matrix("1 2 3/ 40 3 1/ 3  1  3"))
         self.assertEqual(self.m18, create_matrix("-45 -12 -13/-14 -15 -16    /   -17 -18 -9           "))
@@ -236,16 +213,22 @@ class TestFns(unittest.TestCase):
         self.assertEqual((3,4,4,3),corners([[3,4]]))
         self.assertEqual((3,4,4,3),corners([[3,4],[3,4]]))
 
-    def test_count_lets(self):
-        self.assertEqual([99,3,"a",1,"x"], count_lets("xaaa"))
-        self.assertEqual([3, 'a', 0, 'b', 0, 'c', 0, 'd', 0, 'e', 0, 'f', 0, 'g', 0, 'h', 0, 'i', 0, 'j', 0, 'k', 0, 'l', 0, 'm', 0, 'n', 0, 'o', 0, 'p', 0, 'q', 0, 'r', 0, 's', 0, 't', 0, 'u', 0, 'v', 0, 'w', 0, 'x', 0, 'y', 0, 'z'], count_lets("aaa",True))
-        self.assertEqual(
-            [3, 'a', 3, 'd', 5, 'e', 3, 'h', 2, 'i', 1, 'l', 1, 'm', 2, 'n', 3, 'o', 2, 'p', 2, 'r', 5, 's', 6, 't', 2, 'u', 1, 'v', 2, 'w', 2, 'y'],
-            count_lets("ISTA 131 Hw1, Due: Thursday 9/5/2019 at 23:59:59 MST, Python Review + Nested Loops"))
-
     def test_print_nzp(self):
         with io.StringIO() as buf, redirect_stdout(buf):
-            r1 = """
+            r = """
++---+
+|z p|
+|n z|
+|p n|
++---+
+"""[1:]
+            print_nzp([[0,4],
+                       [-3,0],
+                       [5,-2]])
+            self.assertEqual(r, buf.getvalue())
+            
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r = """
 +-----+
 |z p z|
 |n z n|
@@ -255,7 +238,50 @@ class TestFns(unittest.TestCase):
             print_nzp([[0,4,0],
                        [-3,0,-4],
                        [5,-2,3]])
-            self.assertEqual(r1, buf.getvalue())
+            self.assertEqual(r, buf.getvalue())
+            
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r = """
++-----+
+|n n n|
++-----+
+"""[1:]
+            print_nzp([[-100,-4,-20],
+                       ])
+            self.assertEqual(r, buf.getvalue())
+
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r = """
++---------------+
+|n n p p n p p n|
+|p n n n z n n z|
+|n p p p n p p z|
+|n n n p n n n z|
+|p p p p n n p n|
+|p n n z p p n p|
+|z p n n p p p n|
+|p n n n n n n p|
+|n n p p p n p n|
+|p p z p p p p n|
+|z n n p n p p n|
+|n n n p n n n p|
++---------------+
+"""[1:]
+            print_nzp([[-5, -5,  1,  1, -4,  3,  4, -3],
+                       [ 2, -2, -5, -2,  0, -3, -5,  0],
+                       [-1,  2,  4,  4, -2,  3,  4,  0],
+                       [-3, -1, -2,  3, -3, -2, -2,  0],
+                       [ 1,  4,  1,  4, -5, -1,  1, -3],
+                       [ 4, -2, -3,  0,  4,  1, -3,  1],
+                       [ 0,  4, -2, -1,  1,  1,  3, -5],
+                       [ 4, -1, -3, -1, -2, -1, -3,  3],
+                       [-1, -1,  1,  1,  3, -5,  2, -1],
+                       [ 1,  2,  0,  1,  2,  3,  4, -2],
+                       [ 0, -4, -3,  3, -2,  1,  1, -1],
+                       [-4, -2, -1,  2, -4, -1, -2,  3]]
+                       )
+            self.assertEqual(r, buf.getvalue())
+
 
 if __name__ == "__main__":
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(TestFns)

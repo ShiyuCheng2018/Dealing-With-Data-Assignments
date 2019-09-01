@@ -150,7 +150,7 @@ def estimated_hours():
     return 2.5
 
 
-def observation():
+def observations():
     return """
     I did not touch python over this summer, however, it dose not mean I did do any programming.
     I was focus on JavaScript on Web Development over this summer, so I pick Python really fast.
