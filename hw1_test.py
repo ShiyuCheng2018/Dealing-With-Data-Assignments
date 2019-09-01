@@ -234,7 +234,7 @@ class TestFns(unittest.TestCase):
         self.assertEqual((10, 5, 4, 8),corners([[10,3,5],[3,1,7],[8,9,4]]))
         self.assertEqual((7,7,7,7),corners([[7]]))
         self.assertEqual((3,4,4,3),corners([[3,4]]))
-        xself.assertEqual((3,4,4,3),corners([[3,4],[3,4]]))
+        self.assertEqual((3,4,4,3),corners([[3,4],[3,4]]))
 
     def test_count_lets(self):
         self.assertEqual([99,3,"a",1,"x"], count_lets("xaaa"))
