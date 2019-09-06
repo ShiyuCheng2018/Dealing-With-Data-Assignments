@@ -222,6 +222,8 @@ class TestFns(unittest.TestCase):
 |p n|
 +---+
 """[1:]
+
+
             print_nzp([[0,4],
                        [-3,0],
                        [5,-2]])

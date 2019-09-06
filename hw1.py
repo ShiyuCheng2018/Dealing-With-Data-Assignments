@@ -123,7 +123,7 @@ def print_nzp(matrix):
                 the_row += " p"
         body += "|" + the_row[1:] + "|\n"
 
-    heads = "+" + minus[1:] + "+"
+    heads = "+" + minus[len(matrix[0])+1:] + "+"
     return heads + "\n" + body[0:-1] + "\n" + heads
 
 
@@ -158,3 +158,8 @@ def observations():
     was completing them, luckily I solved them :) 
     Question: How deep that we gonna discover Python in this course? 
     """
+
+
+print(print_nzp([[0,4],
+                       [-3,0],
+                       [5,-2]]))
