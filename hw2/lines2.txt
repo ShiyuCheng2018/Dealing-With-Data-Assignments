@@ -1,0 +1,14 @@
+this assignment is
+simply writing a number of functions that are
+described in this writeup so there seems to be no good
+reason to require you
+
+
+to duplicate or paraphrase those descriptions for
+these functions  therefore no documentation
+for the functions is requiredu  however if you write
+
+any helper functions those helper functions should
+contain a concise docstring explaining what
+the function does citing any parameters
+used and any value returned

@@ -1,0 +1,36 @@
+                            cabj
+      january               february               march          
+su mo tu we th fr sa  su mo tu we th fr sa  su mo tu we th fr sa  
+       b  c  d  e  f                  b  c                  b  c  
+ g  h  i  j ba bb bc   d  e  f  g  h  i  j   d  e  f  g  h  i  j  
+bd be bf bg bh bi bj  ba bb bc bd be bf bg  ba bb bc bd be bf bg  
+ca cb cc cd ce cf cg  bh bi bj ca cb cc cd  bh bi bj ca cb cc cd  
+ch ci cj da db        ce cf cg ch ci        ce cf cg ch ci cj da  
+                                            db                    
+
+       april                  may                   june          
+su mo tu we th fr sa  su mo tu we th fr sa  su mo tu we th fr sa  
+    b  c  d  e  f  g            b  c  d  e                     b  
+ h  i  j ba bb bc bd   f  g  h  i  j ba bb   c  d  e  f  g  h  i  
+be bf bg bh bi bj ca  bc bd be bf bg bh bi   j ba bb bc bd be bf  
+cb cc cd ce cf cg ch  bj ca cb cc cd ce cf  bg bh bi bj ca cb cc  
+ci cj da              cg ch ci cj da db     cd ce cf cg ch ci cj  
+                                            da                    
+
+        july                 august              september        
+su mo tu we th fr sa  su mo tu we th fr sa  su mo tu we th fr sa  
+    b  c  d  e  f  g               b  c  d   b  c  d  e  f  g  h  
+ h  i  j ba bb bc bd   e  f  g  h  i  j ba   i  j ba bb bc bd be  
+be bf bg bh bi bj ca  bb bc bd be bf bg bh  bf bg bh bi bj ca cb  
+cb cc cd ce cf cg ch  bi bj ca cb cc cd ce  cc cd ce cf cg ch ci  
+ci cj da db           cf cg ch ci cj da db  cj da                 
+                                                                  
+
+      october               november              december        
+su mo tu we th fr sa  su mo tu we th fr sa  su mo tu we th fr sa  
+       b  c  d  e  f                  b  c   b  c  d  e  f  g  h  
+ g  h  i  j ba bb bc   d  e  f  g  h  i  j   i  j ba bb bc bd be  
+bd be bf bg bh bi bj  ba bb bc bd be bf bg  bf bg bh bi bj ca cb  
+ca cb cc cd ce cf cg  bh bi bj ca cb cc cd  cc cd ce cf cg ch ci  
+ch ci cj da db        ce cf cg ch ci cj da  cj da db              
+                                                                  
