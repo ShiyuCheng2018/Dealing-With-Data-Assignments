@@ -45,7 +45,7 @@ def count_lets(str, all=False):
         return result
 
 
-def print_index(text): #;;;;;;;;;;;;;;;;;
+def print_index(text):
     p = open(text)
     o = open(text)
     read = o.readlines()
@@ -57,7 +57,7 @@ def print_index(text): #;;;;;;;;;;;;;;;;;
     for unique in uniques:
         each_string = unique + " : "
         for line in range(len(read)):
-            if unique in read[line]:
+            if unique in read[line].split():
                 each_string += str(line + 1) + ", "
         string += each_string[:-2] + "\n"
 
@@ -65,10 +65,6 @@ def print_index(text): #;;;;;;;;;;;;;;;;;
     o.close()
 
     print(string[:-1])
-
-
-# print_index("lines.txt")
-
 
 def four_lines():
     capital = chr(65)
@@ -131,7 +127,8 @@ def binhex(num):
     return first[:-1] + "\n" + second[:-1]
 
 
-# bin_four is a function that pass a bin string (ex: 01111101), and return an array ['0111', '1101']
+# bin_four is a function that pass a bin string
+# (ex: 01111101), and return an array ['0111', '1101']
 def bin_four(string):
     bin_array = []
     for each in range(len(string) // 4):
