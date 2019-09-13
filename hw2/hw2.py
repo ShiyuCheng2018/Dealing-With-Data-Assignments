@@ -66,6 +66,7 @@ def print_index(text):
 
     print(string[:-1])
 
+
 def four_lines():
     capital = chr(65)
     small = chr(97)
@@ -88,6 +89,7 @@ def four_lines():
 
 four_lines()
 
+
 def cp_range(string):
     cp = []
 
@@ -101,7 +103,7 @@ def mystry(array):
     string = ""
     for each in array:
         print(each)
-        string += chr(each[0])*each[1]
+        string += chr(each[0]) * each[1]
 
 
 def binhex(num):
@@ -112,7 +114,7 @@ def binhex(num):
     if len(bin_string) % 4 == 1:
         bin_array = bin_four("000" + bin_string)
     elif len(bin_string) % 4 == 2:
-        bin_array = bin_four("00"+bin_string)
+        bin_array = bin_four("00" + bin_string)
     elif len(bin_string) % 4 == 3:
         bin_array = bin_four("0" + bin_string)
     else:
@@ -132,9 +134,52 @@ def binhex(num):
 def bin_four(string):
     bin_array = []
     for each in range(len(string) // 4):
-        bin_array.append(string[0+each*4: 4+each*4])
+        bin_array.append(string[0 + each * 4: 4 + each * 4])
     return bin_array
 
-def my_int():
-    pass
 
+def my_int(string, base=10):
+    isNeg = False
+
+    if string[0] == "-":
+        len_str = len(string) - 1
+        my_str = string[1:]
+        isNeg = True
+    else:
+        len_str = len(string)
+        my_str = string
+
+    if base != 1:
+        num = 0
+        for i in range(len_str):
+            num += digit_val(my_str[len_str - i - 1]) * (base ** i)
+    else:
+        num = len_str
+
+    if isNeg:
+        return -num
+    else:
+        return num
+
+
+def digit_val(string):
+    if 65 <= ord(string) <= 90:
+        return ord(string) - 65 + 10
+    elif 97 <= ord(string) <= 122:
+        return ord(string) - 97 + 10
+
+    return ord(string) - ord("0")
+
+
+def estimated_hours():
+    return 2.5
+
+
+def observations():
+    return """
+    I did not touch python over this summer, however, it dose not mean I did do any programming.
+    I was focus on JavaScript on Web Development over this summer, so I pick Python really fast.
+    These questions are generally fair for reviewing Python, but I did met a few problems while I 
+    was completing them, luckily I solved them :) 
+    Question: How deep that we gonna discover Python in this course? 
+    """
