@@ -1,0 +1,5 @@
+Trending YouTube Video Statistics
+https://www.kaggle.com/datasnaek/youtube-new
+
+This dataset records many youtube videos and list them with their ranking, and views. I will visualize them as graphs.
+
