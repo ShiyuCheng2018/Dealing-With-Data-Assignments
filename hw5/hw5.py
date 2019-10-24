@@ -1,4 +1,5 @@
 # Shiyu Cheng 23329948
+# Fri. 11:00-1:00 Hayley
 # 10/18/2019
 # hw5
 
