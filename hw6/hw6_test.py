@@ -33,6 +33,7 @@ class TestFns(unittest.TestCase):
     def test_format_df(self):
         correct = pd.read_pickle('all_countries1.pkl')
         df = pd.read_pickle('all_countries0.pkl')
+
         self.assertIsNone(format_df(df))
         self.assertTrue(compare_frames_str(correct, df))
     

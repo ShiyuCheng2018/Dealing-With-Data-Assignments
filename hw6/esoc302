@@ -1,0 +1,26 @@
+ Practice One:
+
+ non-Directional
+
+ CI = p +/- 1.96*root(p*(1-p)/N)
+
+ CI =  0.55 +/- 0.005 = 0.55 +/- 1.96*root((0.55*0.45)/300)
+
+ Practice Two:
+ H1: UofA college students will own more school branded objects than the average college student.
+
+ CI = μ = M ± Z(sM) where:
+                            #M = sample mean
+                            #Z = Z statistic determined by confidence level
+                            #sM = standard error = √(s2/n)
+        =μ = 6.25 ± 1.96 * √(1.52/224) = 6.25 ± 0.1964
+
+
+ (1)What your H1 was
+
+ (2)Your sample size and what the mean of your outcome variable was
+ (3)What the null hypothesis value was
+ (4)The lower bound of the CI
+    6.25 + 0.1964
+ (5)The upper bound of the CI
+    6.25 - 0.1964
