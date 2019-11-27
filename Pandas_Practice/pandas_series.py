@@ -102,9 +102,6 @@ def tryme():
 
 
 
-
-
-
 def main():
     make_series()
     # serise_to_list()
