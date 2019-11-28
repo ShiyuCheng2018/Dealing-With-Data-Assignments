@@ -23,11 +23,9 @@ def format_df(dataframe):
     :param dataframe:
     :return: DataFrame
     """
-    dataframe["Region"] = dataframe["Region"].str.strip()
-    dataframe["Region"] = dataframe["Region"].str.title()
+    dataframe.Region = dataframe.Region.str.title().str.strip()
+    dataframe.index = dataframe.index.str.strip()
     dataframe.index.name = None
-    dataframe.index = dataframe.index[:].str.strip()
-    return dataframe
 
 def dod(p, r):
     num_yrs = 0
@@ -42,8 +40,7 @@ def growth_rate(dataframe):
     :param dataframe:
     :return: DataFrame
     """
-    dataframe["Growth Rate"] = dataframe["Birthrate"] - dataframe["Deathrate"]
-    return dataframe
+    dataframe["Growth Rate"] = dataframe.Birthrate - dataframe.Deathrate
 
 
 def years_to_extinction(dataframe):
@@ -59,14 +56,17 @@ def years_to_extinction(dataframe):
         if the_rate != "nan":
             if the_rate < 0:
                 dataframe["Years to Extinction"][rate] = dod(dataframe["Population"][rate], the_rate)
-                # print(dataframe.index[rate], dataframe["Years to Extinction"][rate])
 
-    return dataframe
-
-
-
-def dying_countries():
-    pass
+def dying_countries(df):
+    df = df["Years to Extinction"]
+    a = 0
+    for i in range(len(df)):
+        if str(df.iloc[a]) == "nan":
+            df.drop(df.index[a], inplace=True)
+        else:
+            a += 1
+    df = df.sort_values(ascending=True)
+    return df
 
 
 def main():
@@ -74,24 +74,13 @@ def main():
     This function that prints out the five countries that are going to extinction sooner
     :return:
     """
-    csv = "countries_of_the_world.csv"
-    DataFrame = csv_to_dataframe(csv)
-    # print(format_df(DataFrame))
-    # print(pd.read_pickle('all_countries1.pkl').index[:])
-    countries = years_to_extinction(growth_rate(format_df(DataFrame)))
-
-    countries_extinction = []
-    extinctions = []
-    for country in range(len(countries)):
-        if(countries["Years to Extinction"][country]) > 0:
-            countries_extinction.append((countries.index[country], countries["Years to Extinction"][country]))
-            extinctions.append(countries["Years to Extinction"][country])
-
-    for extinction in sorted(list(set(extinctions)))[:5]:
-        for country in countries_extinction:
-            if extinction == country[1]:
-                print(str(country[0])+": "+str(country[1])+" Years to Extinction")
-
+    df = csv_to_dataframe('countries_of_the_world.csv')
+    format_df(df)
+    growth_rate(df)
+    years_to_extinction(df)
+    d_df = dying_countries(df)
+    for i in range(0, 5):
+        print(str(d_df.index[i]) + ": " + str(d_df[i]) + " " + str(d_df.name))
 
 if __name__ == "__main__":
     main()

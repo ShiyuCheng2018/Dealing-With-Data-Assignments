@@ -111,7 +111,8 @@ def make_fig_2(df_1):
 
 def main():
     """
-    a series steps to make csv files.
+    Read the data in the file data_79_18.csv into a frame, recreating hw7 frame. Make figure 1 frame
+    and a figure 2 frame.
     :return:
     """
     df = pd.read_csv("data_79_18.csv", index_col=0)
